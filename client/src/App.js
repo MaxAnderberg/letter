@@ -1,7 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import fetch from 'node-fetch';
 
-function App() {
+const App = () => {
+  const callApi = async () => {
+    console.log('Hello World')
+    const response = await fetch('/api/posts');
+    const body = await response.json();
+    console.log(body)
+    if (response.status !== 200) throw Error(body.message);
+    return body;
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,9 +27,11 @@ function App() {
         >
           Learn React
         </a>
+      <button onClick={callApi}>Click Me</button>
+
       </header>
     </div>
   );
-}
+};
 
 export default App;
