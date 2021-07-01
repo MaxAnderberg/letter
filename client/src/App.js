@@ -2,6 +2,16 @@ import logo from './logo.svg';
 import './App.scss';
 import fetch from 'node-fetch';
 import { useState } from 'react';
+import Login from './components/login/Login';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+  useHistory,
+  useLocation
+} from "react-router-dom";
 
 const App = () => {
   
@@ -20,8 +30,9 @@ const App = () => {
 
   return (
     <div className="App">
-      <button onClick={callApi}>Click Me</button>
-      {messages.map((i) => i.text)}
+      {/* <button onClick={callApi}>Click Me</button>
+      {messages.map((i) => i.text)} */}
+      <Login />
     </div>
   );
 };
