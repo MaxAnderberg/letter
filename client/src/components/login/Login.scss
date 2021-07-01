@@ -2,8 +2,29 @@ body{
     background-color: #EF4733;
 }
 
-.login__title{
-    color: white;
-    font-weight: 800;
-    font-size: 4rem;
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    &__form {
+        display: flex;
+        flex-direction: column; 
+        width: 20%;
+    }
+    &__title{
+        margin-top: 4rem;
+        color: white;
+        font-weight: 800;
+        font-size: 2rem;
+    }
+
+    &__input-userName {
+        border-radius: 5px;
+        background-color: transparent;
+        padding: 1%;
+        height: 2rem;
+        border: 1px solid black;
+        margin-bottom: 1.5rem;
+    }
 }

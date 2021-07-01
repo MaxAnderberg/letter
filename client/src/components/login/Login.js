@@ -21,10 +21,9 @@ const Login = ({ login }) => {
     }
     return (
         <div className="login">
-        <h1 className="login__title">Letter</h1>
-           <form action="#" onSubmit={handleSubmit}>
-               <h3>Login</h3>
-                <input type="text" name="" value={userName} id="" placeholder="Username..." onChange={(e) => handleOnChange(e)}/>
+        <h1 className="login__title">Login in to letter</h1>
+           <form className="login__form" action="#" onSubmit={handleSubmit}>
+                <input className="login__input-userName" type="text" name="" value={userName} id="" placeholder="Username..." onChange={(e) => handleOnChange(e)}/>
                 <Link to="/home">
                     <input type="submit" value="Login" />
                 </Link>
