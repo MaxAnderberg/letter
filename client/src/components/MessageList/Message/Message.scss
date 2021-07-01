@@ -1,0 +1,22 @@
+.message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-top: 1px solid black;
+    padding: 1rem;
+    &__message__top-container-flex {
+        display: flex;
+    }
+    &__icon {
+        width: 40px;
+        height: 40px;
+    }
+    &__user {
+        display: inline-flex;        
+    }
+    &:last-of-type{
+        border-bottom: 1px solid black;
+    }
+}
