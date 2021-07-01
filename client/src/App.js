@@ -1,12 +1,18 @@
 import logo from './logo.svg';
 import './App.scss';
 import fetch from 'node-fetch';
+import { useState } from 'react';
 
 const App = () => {
+  
+  const [messages, setMessages] = useState([])
+  const [user, setUser] = useState('Max');
   const callApi = async () => {
     console.log('Hello World')
+    
     const response = await fetch('/api/posts');
     const body = await response.json();
+    setMessages(body)
     console.log(body)
     if (response.status !== 200) throw Error(body.message);
     return body;
@@ -14,22 +20,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       <button onClick={callApi}>Click Me</button>
-
-      </header>
+      {messages.map((i) => i.text)}
     </div>
   );
 };
