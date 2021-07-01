@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.scss';
 import fetch from 'node-fetch';
 import { useState, useEffect } from 'react';
@@ -9,7 +8,7 @@ import {
   BrowserRouter as Router,
   Route,
 } from "react-router-dom";
-
+import Sidebar from './components/sidebar/Sidebar';
 const App = () => {
 
   const [messages, setMessages] = useState([])
@@ -21,9 +20,7 @@ const App = () => {
   })
 
   const login = (userName) => {
-    console.log('Hello Team')
     setUser(userName);
-    console.log(user);
   };
 
   const createPost = async post => {
@@ -31,7 +28,7 @@ const App = () => {
     await fetch('/api/posts', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(data) // body data type must match "Content-Type" header
+      body: JSON.stringify(data)
     });
     await callApi();
   };
@@ -49,6 +46,7 @@ const App = () => {
   // useEffect(() => localStorage.setItem(localStorageKey, JSON.stringify(tasks)));
   return(
     <div className="App">
+      {user ? <Sidebar /> : ''}
       <Router>
         <Route exact path="/" component={Splash}/>
         <Route path="/login" render={(props) => (<Login {...props} login={login} /> )} />
@@ -57,8 +55,8 @@ const App = () => {
           the sidebar etc if the user is logged in. I'll have to look that up later though
         */}
         <Route path="/home" render={(props) => (<Home {...props} messages={messages} createPost={createPost} />)}/>
+        
       </Router>
-      {}
     </div>
   )
 };
