@@ -1,4 +1,5 @@
 const { response } = require('express');
+const dateFormat = require('dateformat');
 const express = require('express');
 const router = express.Router();
 
@@ -7,13 +8,13 @@ let messages = [
       id:1,
       text: "Hi there!",
       user: "<Salt/> Dev",
-      added: new Date()
+      added: dateFormat(new Date(), "dddd, mmmm dS, yyyy, h:MM TT")
     },
     {
       id:2,
       text: "Hello World!",
       user: "Charles",
-      added: new Date()
+      added: dateFormat(new Date(), "dddd, mmmm dS, yyyy, h:MM TT")
     }
  ];
 
@@ -28,8 +29,8 @@ const createMessage = body => {
     const message = body;
     const id = nextId(messages);
     message.id = id;
-    message.added = new Date();
-    messages.push(message);
+    message.added = dateFormat(new Date(), "dddd, mmmm dS, yyyy, h:MM TT");
+    messages.unshift(message)
     return message;
 }
 
@@ -45,8 +46,6 @@ router.post('/posts', (req, res) => {
             return res.send('Include Text And Name');
         }
         const message = createMessage(req.body)
-        console.log(message)
-        console.log(messages)
         return res.status(201).json(message)
     } catch (error) {
         

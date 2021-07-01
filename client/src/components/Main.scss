@@ -1,4 +1,5 @@
 .main-content-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-row: 1 / -1;
+    grid-column: 2 / span 3;
+    width: 65%;
 }

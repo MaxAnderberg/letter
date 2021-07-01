@@ -1,0 +1,21 @@
+.new-message-container {
+    height: 100%;
+}
+
+.new-message-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8%;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    &:last-child {
+        border-bottom: 1px solid black;
+    }
+}
+
+.new-message__submit{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}

@@ -1,10 +1,15 @@
 import './MessageList.scss';
 import Message from './Message/Message';
+import NewMessage from './NewMessage/NewMessage';
+import Combo from './Combo';
 
-const MessageList = ({ messages }) => {
+const MessageList = ({ messages, createPost }) => {
     return (
       <div className="message-list-container">
-          {messages.map(item => <Message key={item.id} message={item} />)}
+        <div>
+            <NewMessage createPost={createPost}/>
+            {messages.map(item => <Message key={item.id} message={item} />)}
+        </div>
       </div>
     );
 }

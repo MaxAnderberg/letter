@@ -1,12 +1,10 @@
 import MessageList from "../MessageList/MessageList";
 import NewMessage from "../MessageList/NewMessage/NewMessage";
-
+import '../Main.scss';
 const Home = ({messages, createPost}) => {
   return (
-    <div>
-      <h1>Home</h1>
-      <NewMessage createPost={createPost}/>
-      <MessageList messages={messages}/>
+    <div className="main-content-container">
+      <MessageList messages={messages} createPost={createPost}/>
     </div>
   )
 }

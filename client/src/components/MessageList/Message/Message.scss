@@ -6,6 +6,8 @@
     text-align: center;
     border-top: 1px solid black;
     padding: 1rem;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
     &__message__top-container-flex {
         display: flex;
     }

@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import './NewMessage.scss'
 const NewMessage = ({ createPost }) => {
 
   const [messageText, setMessageText] = useState('');
@@ -12,10 +12,12 @@ const NewMessage = ({ createPost }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="" id="" value={messageText} onChange={(event) => setMessageText(event.target.value)} />
-      <input type="submit" value="Post" />
-    </form>
+    <section className="new-message-container">
+      <form onSubmit={handleSubmit} className="new-message-form">
+        <input type="text" name="" id="" value={messageText} onChange={(event) => setMessageText(event.target.value)} />
+        <input className="new-message__submit" type="submit" value="Post" />
+      </form>
+    </section>
   )
 }
 

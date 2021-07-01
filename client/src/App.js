@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Login from './components/login/Login';
 import Splash from './components/Splash/Splash';
 import Home from './components/Home/Home';
+import About from './components/About';
 import {
   BrowserRouter as Router,
   Route,
@@ -46,16 +47,12 @@ const App = () => {
   // useEffect(() => localStorage.setItem(localStorageKey, JSON.stringify(tasks)));
   return(
     <div className="App">
-      {user ? <Sidebar /> : ''}
       <Router>
+        {user ? <Sidebar /> : ''}
         <Route exact path="/" component={Splash}/>
         <Route path="/login" render={(props) => (<Login {...props} login={login} /> )} />
-        {/* The routes below I want protected when not logged in 
-          Additionally, I think I can write a checker that will only display 
-          the sidebar etc if the user is logged in. I'll have to look that up later though
-        */}
         <Route path="/home" render={(props) => (<Home {...props} messages={messages} createPost={createPost} />)}/>
-        
+        <Route path="/about" render={(props) => (<About {...props} messages={messages} createPost={createPost} />)}/>
       </Router>
     </div>
   )
