@@ -7,18 +7,13 @@ import Splash from './components/Splash/Splash';
 import Home from './components/Home/Home';
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
-  Link,
-  Redirect,
-  useHistory,
-  useLocation
 } from "react-router-dom";
 
 const App = () => {
 
   const [messages, setMessages] = useState([])
-  const [user, setUser] = useState('Max');
+  const [user, setUser] = useState('');
 
   const preparePost = (post) => ({
     text:post,
