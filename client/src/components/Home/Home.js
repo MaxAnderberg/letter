@@ -4,7 +4,7 @@ import NewMessage from "../MessageList/NewMessage/NewMessage";
 const Home = ({messages, createPost}) => {
   return (
     <div>
-      <h1>Home Page</h1>
+      <h1>Home</h1>
       <NewMessage createPost={createPost}/>
       <MessageList messages={messages}/>
     </div>

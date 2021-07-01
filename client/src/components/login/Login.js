@@ -6,7 +6,7 @@ import {
     Link,
   } from "react-router-dom";
 
-const Login = () => {
+const Login = ({ login }) => {
     const [userName, setUser] = useState('');
 
     const handleOnChange = (e) => setUser(e.target.value)
@@ -14,6 +14,7 @@ const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if(userName){
+            login(userName);
             return 
         }
         setUser('');

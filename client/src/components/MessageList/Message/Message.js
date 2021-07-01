@@ -4,7 +4,7 @@ const Message = ({ message }) => {
     return (
         <article className="message">
             <section>
-            <span className message__top-container-flex>
+            <span className="message__top-container-flex">
                 <img className="message__icon" src={user} alt="An icon of the user" />
                 <p className="message__user">{message.user}</p>
             </span>

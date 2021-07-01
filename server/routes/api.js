@@ -28,6 +28,7 @@ const createMessage = body => {
     const message = body;
     const id = nextId(messages);
     message.id = id;
+    message.added = new Date();
     messages.push(message);
     return message;
 }
