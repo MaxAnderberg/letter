@@ -3,6 +3,7 @@ import './App.scss';
 import fetch from 'node-fetch';
 import { useState } from 'react';
 import Login from './components/login/Login';
+import Splash from './components/Splash/Splash';
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,27 +15,15 @@ import {
 } from "react-router-dom";
 
 const App = () => {
-  
-  const [messages, setMessages] = useState([])
-  const [user, setUser] = useState('Max');
-  const callApi = async () => {
-    console.log('Hello World')
-    
-    const response = await fetch('/api/posts');
-    const body = await response.json();
-    setMessages(body)
-    console.log(body)
-    if (response.status !== 200) throw Error(body.message);
-    return body;
-  };
-
-  return (
+  return(
     <div className="App">
-      {/* <button onClick={callApi}>Click Me</button>
-      {messages.map((i) => i.text)} */}
-      <Login />
+      <Router>
+        <Route exact path="/" component={Splash}/>
+        <Route path="/login" component={Login}/>
+      </Router>
+      
     </div>
-  );
+  )
 };
 
 export default App;
