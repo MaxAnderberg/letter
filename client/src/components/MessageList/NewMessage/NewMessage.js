@@ -8,6 +8,7 @@ const NewMessage = ({ createPost }) => {
     console.log('Handle submit in new message')
     event.preventDefault();
     createPost(messageText);
+    setMessageText('');
   }
 
   return (
