@@ -6,7 +6,7 @@ const router = express.Router();
 let messages = [
     {
       id:1,
-      text: "Hi there!",
+      text: "Just spent all evening doing css... 'Nah, this will only take an hour.' #NeverUnderstimateCSS ",
       user: "<Salt/> Dev",
       added: dateFormat(new Date(), "h:MM TT")
     },
