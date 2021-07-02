@@ -14,7 +14,7 @@ const NewMessage = ({ createPost }) => {
   return (
     <section className="new-message-container">
       <form onSubmit={handleSubmit} className="new-message-form">
-        <input type="text" name="" id="" value={messageText} onChange={(event) => setMessageText(event.target.value)} />
+        <input className="new-message__input" type="text" name="" id="" value={messageText} required placeholder="Share something!" onChange={(event) => setMessageText(event.target.value)} />
         <input className="new-message__submit" type="submit" value="Post" />
       </form>
     </section>

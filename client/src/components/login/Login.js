@@ -5,9 +5,12 @@ import { useHistory } from 'react-router';
 
 const Login = ({ login }) => {
     const [userName, setUser] = useState('');
+    const [password, setPassword] = useState('');
+
     const history = useHistory();
 
-    const handleOnChange = (e) => setUser(e.target.value)
+    const handleUserNameOnChange = (e) => setUser(e.target.value)
+    const handlePasswordOnChange = (e) => setPassword(e.target.value)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -20,13 +23,15 @@ const Login = ({ login }) => {
             });
         }
         setUser('');
+        setPassword('');
     }
     return (
         <div className="login">
-        <h1 className="login__title">Login in to letter</h1>
+        <h1 className="login__title">Log in to Letter</h1>
            <form className="login__form" action="#" onSubmit={handleSubmit}>
-                <input className="login__input-userName" type="text" name="" value={userName} id="" placeholder="Username..." onChange={(e) => handleOnChange(e)}/>
-                <input type="submit" value="Login" />
+                <input className="login__input-userName" type="text" name="" value={userName} id="" placeholder="Username" onChange={(e) => handleUserNameOnChange(e)}/>
+                <input className="login__input-password" type="password" name="" value={password} id="" placeholder="Password" onChange={(e) => handlePasswordOnChange(e)}/>
+                <input className="login__submit" type="submit" value="Log in" />
            </form>
         </div>
     )

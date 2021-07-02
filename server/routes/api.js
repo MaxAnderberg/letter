@@ -8,13 +8,13 @@ let messages = [
       id:1,
       text: "Hi there!",
       user: "<Salt/> Dev",
-      added: dateFormat(new Date(), "dddd, mmmm dS, yyyy, h:MM TT")
+      added: dateFormat(new Date(), "h:MM TT")
     },
     {
       id:2,
       text: "Hello World!",
       user: "Charles",
-      added: dateFormat(new Date(), "dddd, mmmm dS, yyyy, h:MM TT")
+      added: dateFormat(new Date(), "h:MM TT")
     }
  ];
 
@@ -29,7 +29,7 @@ const createMessage = body => {
     const message = body;
     const id = nextId(messages);
     message.id = id;
-    message.added = dateFormat(new Date(), "dddd, mmmm dS, yyyy, h:MM TT");
+    message.added = dateFormat(new Date(), "h:MM TT");
     messages.unshift(message)
     return message;
 }

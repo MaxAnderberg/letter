@@ -1,5 +1,4 @@
 .about-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    grid-column: 2 / 2;
+    grid-row: 1 / -1;
 }

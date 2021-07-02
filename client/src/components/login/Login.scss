@@ -5,8 +5,10 @@ body{
 .login {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center; 
+    width: 100vw;
+    color: white;
     &__form {
         display: flex;
         flex-direction: column; 
@@ -17,6 +19,7 @@ body{
         color: white;
         font-weight: 800;
         font-size: 2rem;
+        font-weight: bold;
     }
 
     &__input-userName {
@@ -25,6 +28,50 @@ body{
         padding: 1%;
         height: 2rem;
         border: 1px solid black;
-        margin-bottom: 1.5rem;
+        margin-bottom: 0;
+        outline: 0;
+        color: white;
+        font-size: 1rem;
     }
+
+    &__input-password {
+        margin-top: 1rem;
+        border-radius: 5px;
+        background-color: transparent;
+        padding: 1%;
+        height: 2rem;
+        border: 1px solid black;
+        margin-bottom: 3rem;
+        outline: 0;
+        color: white;
+        font-size: 1rem;
+    }
+
+    &__submit {
+        background-color: transparent;
+        font-weight: bold;
+        border: transparent;
+        height: 2.5rem;
+        width: 16.4rem;
+        color: white;
+        text-align: center;
+        border-radius: 5px;
+        padding: 5px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        transition: 250ms;
+        &:hover {
+            cursor: pointer;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        }
+    }
+}
+input[type="text"]:-moz-placeholder{color: rgba(47,130,194,.6);}
+input[type="text"]:-ms-input-placeholder{color: rgba(47,130,194,.6);}
+input[type="text"]::-webkit-input-placeholder{color: rgba(47,130,194,.6);}
+input::placeholder{
+    color: black;
+    font-size: 0.8rem   ;
+}
+    input:focus, textarea:focus {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }

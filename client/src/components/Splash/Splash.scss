@@ -35,11 +35,13 @@
 
 .input-group-btn{
     text-align: center;
-    border: 2px solid black;
     border-radius: 5px;
     padding: 5px;
     width: 10rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    transition: 250ms;
     &:hover {
         cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     }
 }

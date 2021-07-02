@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 
-
 .App {
   display: grid;
-  text-align: center;
   font-family: 'Comfortaa', cursive;
   height: 100vh;
+  background-color: #EF4733;
 }
-
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
