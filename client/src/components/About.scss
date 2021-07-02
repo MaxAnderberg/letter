@@ -1,4 +1,14 @@
 .about-container {
-    grid-column: 2 / 2;
-    grid-row: 1 / -1;
+    display:flex ;
+    flex-direction: column;
+    grid-column: 2 / span 2;
+    margin-top: 2%;
+    grid-row: 2 / -1;
+    margin-left: 35%;
+    width: 100%;
+}
+p {
+    grid-column: 2 / span 2;
+
+    width: 100vw;
 }
